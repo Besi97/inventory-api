@@ -1,0 +1,16 @@
+schema {
+    query: Query
+}
+
+type Query {
+    products: [Product!]!
+}
+
+"""
+A simple product
+"""
+type Product {
+    id: ID!
+    name: String!
+    price: Float!
+}
