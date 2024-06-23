@@ -1,2 +1,9 @@
 .idea
+.gradle
+.kotlin
+gradle
+gradlew
+gradlew.bat
+build
 inventory-api.iml
+**/generated/**
