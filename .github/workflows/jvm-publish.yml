@@ -17,7 +17,6 @@ jobs:
       - name: Run Gradle build and publish
         run: cd $GITHUB_WORKSPACE && ./gradlew publish
         env:
-          DOMAIN: ${{ secrets.DOMAIN }}
           GITLAB_DOMAIN: ${{ secrets.GITLAB_DOMAIN }}
           GITLAB_PUBLISH_USERNAME: ${{ secrets.GITLAB_PUBLISH_USERNAME }}
           GITLAB_PUBLISH_PASSWORD: ${{ secrets.GITLAB_PUBLISH_PASSWORD }}

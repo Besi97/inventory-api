@@ -20,9 +20,9 @@ val generatedCodePath = "${layout.projectDirectory}/src/generated"
 tasks.named<GraphQLCodegenGradleTask>("graphqlCodegen") {
     graphqlSchemaPaths = listOf("src/main/resources/schema.graphqls")
     outputDir = File(generatedCodePath)
-    packageName = "${System.getenv("DOMAIN")}.inventory.graphql"
-    apiPackageName = "${System.getenv("DOMAIN")}.inventory.graphql.api"
-    modelPackageName = "${System.getenv("DOMAIN")}.inventory.graphql.model"
+    packageName = "dev.besi.inventory.graphql"
+    apiPackageName = "dev.besi.inventory.graphql.api"
+    modelPackageName = "dev.besi.inventory.graphql.model"
     generateImmutableModels = true
     generatedLanguage = GeneratedLanguage.KOTLIN
 }
@@ -44,7 +44,7 @@ tasks.named<Jar>("sourcesJar") {
 publishing {
     publications {
         create<MavenPublication>("inventory-api-models-jvm") {
-            groupId = "${System.getenv("DOMAIN")}.inventory.graphql"
+            groupId = "dev.besi.inventory.graphql"
             artifactId = "inventory-api-models-jvm"
             version = "0.0.1-beta"
             from(components["java"])
