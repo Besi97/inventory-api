@@ -2,7 +2,10 @@ name: Publish generated JVM types
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - "main"
+    paths:
+      - "src/main/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
