@@ -1,6 +1,7 @@
 .idea
 .gradle
 .kotlin
+.npmrc
 build
 inventory-api.iml
 **/generated/**

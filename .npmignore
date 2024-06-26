@@ -1,0 +1,12 @@
+.github/
+.idea
+.gradle
+.kotlin
+.npmrc
+build
+inventory-api.iml
+**/generated/**
+/node_modules
+package-lock.json
+**gradle**
+codegen.ts

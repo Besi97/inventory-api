@@ -1,7 +1,6 @@
 {
-  "name": "inventory-api",
+  "name": "@inventory/inventory-api",
   "version": "0.0.1-beta",
-  "private": true,
   "scripts": {
     "codegen": "graphql-codegen --config codegen.ts"
   },
