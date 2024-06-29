@@ -15,6 +15,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation("org.springframework.graphql:spring-graphql:1.3.0")
+}
+
 val generatedCodePath = "${layout.projectDirectory}/src/generated"
 
 tasks.named<GraphQLCodegenGradleTask>("graphqlCodegen") {
@@ -25,6 +29,9 @@ tasks.named<GraphQLCodegenGradleTask>("graphqlCodegen") {
     modelPackageName = "dev.besi.inventory.graphql.model"
     generateImmutableModels = true
     generatedLanguage = GeneratedLanguage.KOTLIN
+    resolverArgumentAnnotations = setOf("org.springframework.graphql.data.method.annotation.Argument")
+    parametrizedResolverAnnotations = setOf("org.springframework.graphql.data.method.annotation.SchemaMapping(typeName=\"{{TYPE_NAME}}\")")
+    customAnnotationsMapping = mapOf("Query\\..*" to listOf("org.springframework.graphql.data.method.annotation.QueryMapping"))
 }
 
 sourceSets.getByName("main").kotlin.srcDirs(generatedCodePath)
