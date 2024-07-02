@@ -59,7 +59,7 @@ publishing {
     }
     repositories {
         maven {
-            url = URI("https://${System.getenv("GITLAB_DOMAIN")}/api/v4/projects/3/packages/maven")
+            url = URI("https://${System.getenv("GITLAB_DOMAIN")}/api/v4/projects/4/packages/maven")
             credentials {
                 username = System.getenv("GITLAB_PUBLISH_USERNAME")
                 password = System.getenv("GITLAB_PUBLISH_PASSWORD")
