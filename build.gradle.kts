@@ -53,7 +53,7 @@ publishing {
         create<MavenPublication>("inventory-api-models-jvm") {
             groupId = "dev.besi.inventory.graphql"
             artifactId = "inventory-api-models-jvm"
-            version = "0.0.1-beta"
+            version = "0.0.2"
             from(components["java"])
         }
     }

@@ -1,9 +1,15 @@
 schema {
     query: Query
+    mutation: Mutation
 }
 
 type Query {
     products: [Product!]!
+}
+
+type Mutation {
+    createProduct(newProduct: ProductMutation!): Product!
+    updateProduct(productId: ID!, product: ProductMutation!): Product!
 }
 
 """
@@ -11,6 +17,11 @@ A simple product
 """
 type Product {
     id: ID!
+    name: String!
+    price: Float!
+}
+
+input ProductMutation {
     name: String!
     price: Float!
 }
