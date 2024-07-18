@@ -31,7 +31,10 @@ tasks.named<GraphQLCodegenGradleTask>("graphqlCodegen") {
     generatedLanguage = GeneratedLanguage.KOTLIN
     resolverArgumentAnnotations = setOf("org.springframework.graphql.data.method.annotation.Argument")
     parametrizedResolverAnnotations = setOf("org.springframework.graphql.data.method.annotation.SchemaMapping(typeName=\"{{TYPE_NAME}}\")")
-    customAnnotationsMapping = mapOf("Query\\..*" to listOf("org.springframework.graphql.data.method.annotation.QueryMapping"))
+    customAnnotationsMapping = mapOf(
+        "Query\\..*" to listOf("org.springframework.graphql.data.method.annotation.QueryMapping"),
+        "Mutation\\..*" to listOf("org.springframework.graphql.data.method.annotation.MutationMapping")
+    )
 }
 
 sourceSets.getByName("main").kotlin.srcDirs(generatedCodePath)
